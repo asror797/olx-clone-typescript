@@ -1,4 +1,7 @@
-import { Entity , PrimaryGeneratedColumn , Column } from "typeorm";
+import { Entity , PrimaryGeneratedColumn , Column, ManyToMany, JoinTable } from "typeorm";
+import { Products } from './products.entity'
+
+
 
 @Entity()
 export class Users  {
@@ -21,6 +24,13 @@ export class Users  {
 
    @Column({
       type:'varchar',
+      length:32,
+      nullable:false
+   })
+   status:string
+
+   @Column({
+      type:'varchar',
       length:64,
       nullable:false
    })
@@ -33,4 +43,6 @@ export class Users  {
    })
    password:string
 
+   @ManyToMany(type => Products) @JoinTable()
+   products: Products[];
 }
