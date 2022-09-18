@@ -42,7 +42,4 @@ export class Users  {
       nullable:false
    })
    password:string
-
-   @ManyToMany(type => Products) @JoinTable()
-   products: Products[];
 }

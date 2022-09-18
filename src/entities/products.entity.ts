@@ -10,7 +10,7 @@ export class Products  {
       length:64,
       nullable:false
    })
-   title:string
+   name:string
 
    @Column({
       type:'varchar',
@@ -18,6 +18,9 @@ export class Products  {
       nullable:false
    })
    description:string
+
+   @Column()
+   marketID:number
 
    @Column({
       type:'bigint',
